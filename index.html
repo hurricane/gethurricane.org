@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Hurricane</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="bootstrap.css" rel="stylesheet">
+    <link href="bootstrap-responsive.css" rel="stylesheet">
+    <link href="custom.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="favicon.ico">
+  </head>
+
+  <body>
+    <a href="http://github.com/hurricane/hurricane"><img style="position: absolute; top: 0; right: 0; border: 0;" src="fork.png" alt="Fork me on GitHub"></a>
+
+    <div class="container-fluid">
+      <div class="row-fluid jumbotron masthead">
+        <div class="span3 marketing-image">
+          <img src="hurricane_banner.png"/>
+        </div><!--/span-->
+        <div class="span9">
+          <h1>Hurricane</h1>
+          <p>A scalable, extensible, distributed messaging system.</p>
+          <p class="marketing-buttons">
+            <a class="btn btn-primary btn-large" href="https://www.github.com/hurricane/hurricane">View Project on GitHub &raquo;</a>
+            <a class="btn btn-large" href="https://nodeload.github.com/hurricane/hurricane/zipball/v0.2.1">Download Hurricane &raquo;</a>
+          </p>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Hurricane</li>
+              <li><a href="#getting-started">Getting Started</a></li>
+              <li class="nav-header">Language Examples</li>
+              <li><a href="#ruby">Ruby</a></li>
+              <li><a href="#python">Python</a></li>
+              <li><a href="#php">PHP</a></li>
+              <li><a href="#java">Java</a></li>
+              <li class="nav-header">Configuration</li>
+              <li><a href="#config-basic">Basic Example</a></li>
+              <li class="nav-header">Modules</li>
+              <li><a href="#module-tcp">TCP Server</a></li>
+              <li><a href="#module-stdio">STDIO Server</a></li>
+              <li><a href="#module-http">HTTP Server</a></li>
+              <li><a href="#module-cluster">Distribution Manager (Clustering)</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+          <div class="row-fluid">
+            <div class="span4">
+              <h2><span class="glyph-performance"></span>Performance</h2>
+              <p>Built for speed, Hurricane can send and receive as many as the network can handle. Hurricane is so fast that it can do an entire process-to-process round-trip in 60 microseconds.</p>
+            </div><!--/span-->
+            <div class="span4">
+              <h2><span class="glyph-clustering"></span>Clustering</h2>
+              <p>Clustering is provided out of the box with the distribution manager. Even in huge clusters, each node only needs to be configure to talk to one other node&mdash;the rest is magic.</p>
+            </div><!--/span-->
+            <div class="span4">
+              <h2><span class="glyph-scatter-gather"></span>Scatter-Gather</h2>
+              <p>Hurricane ships first-class support for the powerful Scatter-Gather pattern of service communication. Give each message a unique tag and the responses are guaranteed to arrive in-order.</p>
+            </div><!--/span-->
+          </div><!--/row-->
+          <div class="row-fluid">
+            <div class="span4">
+              <h2><span class="glyph-concurrency"></span>Concurrency</h2>
+              <p>Hurricane acts as your concurrency framework. With Scatter-Gather support, easily distribute work over any number of processes. Suddenly, parallelism is easy and bug-free.</p>
+            </div><!--/span-->
+            <div class="span4">
+              <h2><span class="glyph-rails-and-django"></span>Rails and Django</h2>
+              <p>Really any <a href="http://www.wsgi.org/">WSGI</a> or <a href="http://rack.rubyforge.org/">Rack</a> enabled framework. Drivers and handlers are provided so that your Favorite&#153; Python or Ruby Framework can be hooked up to Hurricane to serve HTTP requests.</p>
+            </div><!--/span-->
+            <div class="span4">
+              <h2><span class="glyph-language-support"></span>Language Support</h2>
+              <p>The Hurricane project current ships drivers for <a href="https://github.com/hurricane/driver-ruby">Ruby</a>, <a href="https://github.com/hurricane/driver-python">Python</a>, <a href="https://github.com/hurricane/driver-php">PHP</a>, and <a href="https://github.com/hurricane/driver-java">Java</a>. Interested in support for your language? Please <a href="https://github.com/hurricane/hurricane">contribute</a>&mdash;your help makes a difference!</p>
+            </div><!--/span-->
+          </div><!--/row-->
+
+          <div class="row-fluid">
+            <div class="span4">
+              <h2><span class="glyph-fault-tolerance"></span>Fault Tolerance</h2>
+              <p>Out of the box, messaging works over TCP and over Standard I/O. With Standard I/O-based messaging, Hurricane will manage and restart broken processes automatically.</p>
+            </div><!--/span-->
+            <div class="span4">
+              <h2><span class="glyph-extensibility"></span>Extensibility</h2>
+              <p>At startup, Hurricane loads and compiles each piece of itself. Any number of "after-factory" modules can be added simply by configuring a path for each custom module.</p>
+            </div><!--/span-->
+            <div class="span4">
+              <h2><span class="glyph-open-source"></span>Open Source</h2>
+              <p>Hurricane is created, developed, and shared with the world under the <a href="http://www.opensource.org/licenses/bsd-license.php">New BSD License</a>. Go ahead and do something great with it, and while you're at it, please <a href="https://github.com/hurricane/hurricane">contribute</a>&mdash;your help makes Hurricane better.</p>
+            </div><!--/span-->
+          </div><!--/row-->
+          <br/><br/>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well">
+            <h3 id="getting-started" class="lead">Getting Started</h3>
+            <p>For Hurricane itself, <a href="http://www.erlang.org/"/>Erlang</a> <a href="http://www.erlang.org/download/otp_src_R15B.tar.gz">R14B01+</a> is recommended. To get additional HTTP features, <a href="https://nodeload.github.com/mochi/mochiweb/zipball/master">grab a copy</a> of <a href="https://github.com/mochi/mochiweb">MochiWeb</a>.</p>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+<pre style='color:#000000;'><span style='color:#696969; '># First set everything up</span>
+
+<span style='color:#797997; '>$</span> curl <span style='color:#0000e6; '>'https://nodeload.github.com/hurricane/hurricane/zipball/master'</span> <span style='color:#e34adc; '>></span> hurricane<span style='color:#800000; font-weight:bold; '>.</span>zip
+<span style='color:#797997; '>$</span> unzip hurricane<span style='color:#800000; font-weight:bold; '>.</span>zip
+<span style='color:#797997; '>$</span> mv hurricane-hurricane<span style='color:#808030; '>*</span> hurricane
+<span style='color:#797997; '>$</span> <span style='color:#bb7977; font-weight:bold; '>cd</span> hurricane
+<span style='color:#797997; '>$</span> curl <span style='color:#0000e6; '>'https://nodeload.github.com/mochi/mochiweb/zipball/master'</span> <span style='color:#e34adc; '>></span> mochiweb<span style='color:#800000; font-weight:bold; '>.</span>zip
+<span style='color:#797997; '>$</span> unzip mochiweb<span style='color:#800000; font-weight:bold; '>.</span>zip
+<span style='color:#797997; '>$</span> mv mochi-mochiweb<span style='color:#808030; '>*</span> mochiweb
+<span style='color:#797997; '>$</span> <span style='color:#bb7977; font-weight:bold; '>cd</span> mochiweb
+<span style='color:#797997; '>$</span> make
+<span style='color:#797997; '>$</span> <span style='color:#bb7977; font-weight:bold; '>cd</span> <span style='color:#800000; font-weight:bold; '>.</span><span style='color:#800000; font-weight:bold; '>.</span>
+<span style='color:#797997; '>$</span> <span style='color:#800000; font-weight:bold; '>.</span><span style='color:#40015a; '>/run.escript</span> <span style='color:#40015a; '>examples/basic.config</span>
+
+<span style='color:#696969; '># Now you're ready to run the demos in the examples for one of the <a href="https://github.com/hurricane">language drivers</a></span>
+</pre>
+          <br/><br/>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well">
+            <h3 id="ruby" class="lead">Ruby</h3>
+            <p>The Ruby driver is compatible with Ruby 1.8.6+. Included is the Erlang Codec, Hurricane Gateway Tools, and Rack Handler.</p>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+<pre><span style='color:#400000; '>require</span> <span style='color:#0000e6; '>'hurricane'</span>
+
+gateway <span style='color:#808030; '>=</span> Hurricane::Gateway<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>new</span><span style='color:#808030; '>(</span>Erlang::SocketWrapper<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>new</span><span style='color:#808030; '>(</span><span style='color:#0000e6; '>'localhost'</span>, <span style='color:#008c00; '>3000</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+<span style='color:#400000; '>loop</span> <span style='color:#800000; font-weight:bold; '>do</span>
+  request <span style='color:#808030; '>=</span> Hurricane::Message<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>new</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+  request<span style='color:#808030; '>.</span>type <span style='color:#808030; '>=</span> <span style='color:#0000e6; '>'request'</span>
+  request<span style='color:#808030; '>.</span>destination <span style='color:#808030; '>=</span> <span style='color:#0000e6; '>'time_server'</span>
+  request<span style='color:#808030; '>.</span>tag <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span>
+  request<span style='color:#808030; '>.</span>data <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>nil</span>
+
+  gateway<span style='color:#808030; '>.</span>do_send<span style='color:#808030; '>(</span>request<span style='color:#808030; '>)</span>
+  <span style='color:#400000; '>p</span> gateway<span style='color:#808030; '>.</span>do_recv<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+<span style='color:#800000; font-weight:bold; '>end</span>
+</pre>
+          <br/>
+          <p>Run your favorite Rack-enabled Ruby framework:<p>
+          <pre>rackup --server Hurricane</pre>
+          <br/><br/>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well">
+            <h3 id="python" class="lead">Python</h3>
+            <p>The Python driver is compatible with Python 2.4+. Included is the Erlang Codec, Hurricane Gateway Tools, and WSGI Server.</p>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+<pre><span style='color:#800000; font-weight:bold; '>from</span> hurricane <span style='color:#800000; font-weight:bold; '>import</span> Gateway<span style='color:#808030; '>,</span> Message
+<span style='color:#800000; font-weight:bold; '>from</span> hurricane<span style='color:#808030; '>.</span>erl_codec <span style='color:#800000; font-weight:bold; '>import</span> SocketWrapper
+
+gateway <span style='color:#808030; '>=</span> Gateway<span style='color:#808030; '>(</span>SocketWrapper<span style='color:#808030; '>(</span><span style='color:#0000e6; '>'localhost'</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>3000</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+<span style='color:#800000; font-weight:bold; '>while</span> <span style='color:#e34adc; '>True</span><span style='color:#808030; '>:</span>
+    message <span style='color:#808030; '>=</span> Message<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+    message<span style='color:#808030; '>.</span><span style='color:#e34adc; '>type</span> <span style='color:#808030; '>=</span> <span style='color:#0000e6; '>'request'</span>
+    message<span style='color:#808030; '>.</span>destination <span style='color:#808030; '>=</span> <span style='color:#0000e6; '>'time_server'</span>
+    message<span style='color:#808030; '>.</span>tag <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span>
+    message<span style='color:#808030; '>.</span>data <span style='color:#808030; '>=</span> <span style='color:#e34adc; '>None</span>
+    gateway<span style='color:#808030; '>.</span>send<span style='color:#808030; '>(</span>message<span style='color:#808030; '>)</span>
+    <span style='color:#800000; font-weight:bold; '>print</span> gateway<span style='color:#808030; '>.</span>recv<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+</pre>
+          <br/>
+          <p>Run your favorite WSGI-enabled Python framework:<p>
+          <p>Create myapp.py:<p>
+<pre><span style='color:#800000; font-weight:bold; '>import</span> os
+<span style='color:#800000; font-weight:bold; '>import</span> sys
+
+sys<span style='color:#808030; '>.</span>path<span style='color:#808030; '>.</span>append<span style='color:#808030; '>(</span><span style='color:#0000e6; '>'/path/to/django/project'</span><span style='color:#808030; '>)</span>
+os<span style='color:#808030; '>.</span>environ<span style='color:#808030; '>[</span><span style='color:#0000e6; '>'DJANGO_SETTINGS_MODULE'</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> <span style='color:#0000e6; '>'mydjangoproject.settings'</span>
+
+<span style='color:#800000; font-weight:bold; '>from</span> django<span style='color:#808030; '>.</span>core<span style='color:#808030; '>.</span>handlers<span style='color:#808030; '>.</span>wsgi <span style='color:#800000; font-weight:bold; '>import</span> WSGIHandler
+application <span style='color:#808030; '>=</span> WSGIHandler<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+</pre>
+          <p>and then run:</p>
+          <pre>hurricane_wsgi_server --app myapp</pre>
+          <br/><br/>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well">
+            <h3 id="php" class="lead">PHP</h3>
+            <p>The PHP driver is compatible with PHP 5.3+. Included is the Erlang Codec and Hurricane Gateway Tools.</p>
+            <p>PHP is a platform that sees significant performance improvements when using Hurricane, due to the ability to have long-running processes.</p>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+<pre><span style='color:#5f5035; '>&lt;?php</span><span style='color:#000000; '></span>
+<span style='color:#000000; '></span>
+<span style='color:#800000; font-weight:bold; '>require</span><span style='color:#000000; '> </span><span style='color:#0000e6; '>'hurricane.php'</span><span style='color:#800080; '>;</span><span style='color:#000000; '></span>
+<span style='color:#000000; '></span>
+<span style='color:#797997; '>$gateway</span><span style='color:#000000; '> </span><span style='color:#808030; '>=</span><span style='color:#000000; '> </span><span style='color:#800000; font-weight:bold; '>new</span><span style='color:#000000; '> \Hurricane\Gateway</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>new</span><span style='color:#000000; '> \Erlang\SocketWrapper</span><span style='color:#808030; '>(</span><span style='color:#0000e6; '>'localhost'</span><span style='color:#808030; '>,</span><span style='color:#000000; '> </span><span style='color:#0000e6; '>'3000'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><span style='color:#000000; '></span>
+<span style='color:#800000; font-weight:bold; '>while</span><span style='color:#000000; '> </span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>true</span><span style='color:#808030; '>)</span><span style='color:#000000; '> </span><span style='color:#800080; '>{</span><span style='color:#000000; '></span>
+<span style='color:#000000; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#797997; '>$request</span><span style='color:#000000; '> </span><span style='color:#808030; '>=</span><span style='color:#000000; '> \Hurricane\Message</span><span style='color:#800080; '>:</span><span style='color:#800080; '>:</span><span style='color:#000000; '>create</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#000000; '></span>
+<span style='color:#000000; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#808030; '>-</span><span style='color:#808030; '>></span><span style='color:#000000; '>setType</span><span style='color:#808030; '>(</span><span style='color:#0000e6; '>'request'</span><span style='color:#808030; '>)</span><span style='color:#000000; '></span>
+<span style='color:#000000; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#808030; '>-</span><span style='color:#808030; '>></span><span style='color:#000000; '>setDestination</span><span style='color:#808030; '>(</span><span style='color:#0000e6; '>'time_server'</span><span style='color:#808030; '>)</span><span style='color:#000000; '></span>
+<span style='color:#000000; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#808030; '>-</span><span style='color:#808030; '>></span><span style='color:#000000; '>setTag</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><span style='color:#000000; '></span>
+<span style='color:#000000; '>&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#808030; '>-</span><span style='color:#808030; '>></span><span style='color:#000000; '>setData</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>null</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><span style='color:#000000; '></span>
+<span style='color:#000000; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#797997; '>$gateway</span><span style='color:#808030; '>-</span><span style='color:#808030; '>></span><span style='color:#000000; '>send</span><span style='color:#808030; '>(</span><span style='color:#797997; '>$request</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><span style='color:#000000; '></span>
+<span style='color:#000000; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#797997; '>$response</span><span style='color:#000000; '> </span><span style='color:#808030; '>=</span><span style='color:#000000; '> </span><span style='color:#797997; '>$gateway</span><span style='color:#808030; '>-</span><span style='color:#808030; '>></span><span style='color:#000000; '>recv</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><span style='color:#000000; '></span>
+<span style='color:#000000; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#000000; '> </span><span style='color:#797997; '>$response</span><span style='color:#808030; '>-</span><span style='color:#808030; '>></span><span style='color:#000000; '>getData</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#000000; '> </span><span style='color:#808030; '>.</span><span style='color:#000000; '> PHP_EOL</span><span style='color:#800080; '>;</span><span style='color:#000000; '></span>
+</pre>
+          <br/><br/>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well">
+            <h3 id="java" class="lead">Java</h3>
+            <p>The Java driver is written and tested using the <a href="http://openjdk.java.net/">OpenJDK</a>. Included is the Erlang Codec and Hurricane Gateway Tools.</p>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+<pre style='color:#000000;'><span style='color:#800000; font-weight:bold; '>import</span><span style='color:#004a43; '> org</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>hurricane</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>Gateway</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>import</span><span style='color:#004a43; '> org</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>hurricane</span><span style='color:#808030; '>.</span><span style='color:#004a43; '>Message</span><span style='color:#800080; '>;</span>
+
+<span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>class</span> TcpExample <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>public</span> <span style='color:#800000; font-weight:bold; '>static</span> <span style='color:#bb7977; '>void</span> main<span style='color:#808030; '>(</span><span style='color:#bb7977; font-weight:bold; '>String</span><span style='color:#808030; '>[</span><span style='color:#808030; '>]</span> args<span style='color:#808030; '>)</span> <span style='color:#800000; font-weight:bold; '>throws</span> <span style='color:#bb7977; font-weight:bold; '>Exception</span> <span style='color:#800080; '>{</span>
+        Gateway gateway <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> Gateway<span style='color:#808030; '>(</span><span style='color:#0000e6; '>"localhost"</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>3000</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+        <span style='color:#800000; font-weight:bold; '>while</span> <span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>true</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+            Message request <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> Message<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+            request<span style='color:#808030; '>.</span>setType<span style='color:#808030; '>(</span><span style='color:#0000e6; '>"request"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+            request<span style='color:#808030; '>.</span>setDestination<span style='color:#808030; '>(</span><span style='color:#0000e6; '>"time_server"</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+            request<span style='color:#808030; '>.</span>setTag<span style='color:#808030; '>(</span><span style='color:#008c00; '>0</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+            request<span style='color:#808030; '>.</span>setData<span style='color:#808030; '>(</span><span style='color:#0000e6; '>""</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+
+            <span style='color:#bb7977; font-weight:bold; '>System</span><span style='color:#808030; '>.</span>out<span style='color:#808030; '>.</span>println<span style='color:#808030; '>(</span>request<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+            gateway<span style='color:#808030; '>.</span>send<span style='color:#808030; '>(</span>request<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+            <span style='color:#bb7977; font-weight:bold; '>System</span><span style='color:#808030; '>.</span>out<span style='color:#808030; '>.</span>println<span style='color:#808030; '>(</span>gateway<span style='color:#808030; '>.</span>recv<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        <span style='color:#800080; '>}</span>
+    <span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span>
+</pre>
+          <br/><br/>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well">
+            <h3 id="config-basic" class="lead">Config Example</h3>
+            <p>Here is a configuration example. It is usually the minimum amount of configuration needed to make Hurricane boot.</p>
+            <p>The <code>compile_modules</code> section lists all of the Erlang files to compile and load into Hurricane. To add custom modules to Hurricane, simply drop in the path to the module here.</p>
+            <p>The <code>add_code_paths</code> section lists all of the additional paths where Hurricane will search for code. For example, to enable HTTP support, the path to the compiled <a href="https://github.com/mochi/mochiweb">MochiWeb</a> files is given.</p>
+            <p>The <code>log_level</code> section specifies the log level. The standard log levels are supported: <code>emergency</code>, <code>alert</code>, <code>critical</code>, <code>error</code>, <code>warning</code>, <code>notice</code>, <code>info</code>, <code>debug</code></p>
+            <p>The <code>start_modules</code> section configures which modules to start with which options. Each module must have a <code>start/1</code> function that gets called with the given args.</p>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+          <pre>
+{
+    compile_modules,
+    [
+        "erl_modules/hurricane.erl",
+        "erl_modules/hurricane_config_server.erl",
+        "erl_modules/hurricane_utils.erl",
+        "erl_modules/hurricane_stdio_server.erl",
+        "erl_modules/hurricane_tcp_server.erl",
+        "erl_modules/hurricane_http_server.erl",
+        "erl_modules/hurricane_log_server.erl",
+        "erl_modules/hurricane_supervisor.erl",
+        "erl_modules/hurricane_message_delegate.erl",
+        "erl_modules/hurricane_distribution_manager.erl"
+    ]
+}.
+
+{
+    add_code_paths,
+    [
+        "mochiweb/ebin"
+    ]
+}.
+
+{log_level, info}.
+
+{
+    start_modules,
+    [
+        [
+            {module, hurricane_tcp_server},
+            {args, [{listen_port, 3000}]}
+        ]
+    ]
+}.</pre>
+          <br/><br/>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well">
+            <h3 id="module-tcp" class="lead">TCP Server</h3>
+            <p>This is an example configuration fragment for the Hurricane TCP Server. Multiple of these can be started, but never on the same port.</p>
+            <p>The only option that this module currently takes is <code>listen_port</code>, which configures which port this instance of the TCP Server will listen on for incoming connections.</p>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+          <pre>
+        [
+            {module, hurricane_tcp_server},
+            {args, [{listen_port, 3000}]}
+        ]</pre>
+          <br/><br/>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well">
+            <h3 id="module-stdio" class="lead">STDIO Server</h3>
+            <p>This is an example configuration fragment for the Hurricane STDIO Server.</p>
+            <p>The <code>cmd</code> option specifies which command to run to create a process that will be able to do messaging over Standard I/O.</p>
+            <p>The <code>group_name</code> option which message group the process(es) will belong to.</p>
+            <p>The <code>port_timeout</code> option specifies after how many milliseconds the process should be considered hung and restarted (when waiting for a reply). This is <strong>OPTIONAL (default: 10000)</strong></p>
+            <p>The <code>port_startup_timeout</code> option specifies after how many milliseconds the process should be considered hung and restarted (when starting the process and waiting for the initial ready payload). This is <strong>OPTIONAL (default: 10000)</strong></p>
+            <p>This module also shows Hurricane's ability to start many instances of a module. The <code>count</code> top-level module config specifies how many instances of a module to start. Usually, the default setting of 1 is fine, but with the STDIO server, it is how many copies of a message handler are run.</strong></p>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+          <pre>
+        [
+            {module, hurricane_stdio_server},
+            {
+                args,
+                [
+                    {cmd, "/usr/bin/python examples/http_handler.py"},
+                    {group_name, http_handler},
+                    {port_timeout, 10000},
+                    {port_startup_timeout, 1000}
+                ]
+            },
+            {count, 2}
+        ]</pre>
+          <br/><br/>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well">
+            <h3 id="module-http" class="lead">HTTP Server</h3>
+            <p>This is an example configuration fragment for the Hurricane HTTP Server. Note that <a href="https://github.com/mochi/mochiweb">MochiWeb</a> must be in the code load path.</p>
+            <p>The <code>listen_port</code> option configures which port this instance of the HTTP Server will listen on for incoming connections.</p>
+            <p>The <code>server_name</code> option configures the name of the HTTP Server (for use with handler applications). This is <strong>OPTIONAL (default: "localhost")</strong></p>
+            <p>The <code>handler_group</code> option configures which process group will be used to handle HTTP requests. This is <strong>OPTIONAL (default: http_handler)</strong></p>
+            <p>The <code>response_timeout</code> option specifies how many milliseconds to wait until considering a request to have timed out. This is <strong>OPTIONAL (default: 10000)</strong></p>
+            <p>The <code>static_dir</code> option specifies which directory to serve static files out of. This is <strong>OPTIONAL (default: undefined)</strong></p>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+          <pre>
+        [
+            {module, hurricane_http_server},
+            {
+                args,
+                [
+                    {name, some_name},
+                    {listen_port, 8000},
+                    {server_name, "localhost"},
+                    {handler_group, http_handler},
+                    {response_timeout, 10000},
+                    {static_dir, "/tmp/"}
+                ]
+            }
+        ]</pre>
+          <br/><br/>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well">
+            <h3 id="module-cluster" class="lead">Distribution Manager (Clustering)</h3>
+            <p>This module provides full clustering for Hurricane. As long as every node in a cluster "sees" at least another node, the entire cluster will be operational and able to route messages around correctly.</p>
+            <p>The <code>magic_cookie</code> option configures the secret magic cookie value that has to match up between all nodes for them to be able to connect to each other.</p>
+            <p>The <code>node_name</code> option provides a unique name for this node.</p>
+            <p>The <code>connect_nodes</code> option specifies which other nodes to connect to. Note that single-quotes are used to specify the name of the other nodes as Erlang atoms.</p>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+          <pre>
+        [
+            {module, hurricane_distribution_manager},
+            {
+                args,
+                [
+                    {magic_cookie, the_magic_cookie},
+                    {node_name, hurricane_node_1},
+                    {connect_nodes, ['a_hurricane_node@a_hostname.local']}
+                ]
+            }
+        ]</pre>
+          <br/><br/>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr/>
+
+      <div class="row-fluid">
+        <footer class="footer">
+          <p class="pull-right"><a href="#">Back to Top</a></p>
+          <p>Designed and built, with a fanatical amount of care, by <a href="https://www.twitter.com/icheishvili">@icheishvili</a>.</p>
+          <p>Code licensed under the <a href="http://www.opensource.org/licenses/bsd-license.php">New BSD License</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+          <p>Many thanks to the <a href="https://www.twitter.com/twbootstrap">@twbootstrap</a> team&mdash;you guys made web development fun again..</p>
+          <p>Many thanks to <a href="http://glyphicons.com/">GLYPHICONS</a> for the gorgeous icons used on this site.</p>
+          <p>If you like Hurricane and want to help, please <a href="https://www.github.com/hurricane/hurricane">contribute</a> or consider donating.</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="CXG55VY7MHUNA">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+          </form>
+        </footer>
+      </div><!--/row-->
+
+    </div><!--/.fluid-container-->
+  </body>
+</html>

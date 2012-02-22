@@ -1,0 +1,83 @@
+/**
+ * Mods from Twitter
+ */
+.jumbotron {
+    position: relative;
+}
+.jumbotron h1 {
+    margin-bottom: 9px;
+    font-size: 81px;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+.jumbotron p {
+    margin-bottom: 18px;
+    font-weight: 300;
+}
+.jumbotron .btn-large {
+    font-size: 20px;
+    font-weight: normal;
+    padding: 14px 24px;
+    margin-right: 10px;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+}
+.masthead {
+    padding-top: 36px;
+    margin-bottom: 72px;
+}
+.masthead h1 {
+    margin-bottom: 24px;
+}
+.masthead p {
+    font-size: 30px;
+    line-height: 36px;
+}
+p.marketing-buttons {
+    margin-top: 40px;
+}
+div.marketing-image {
+    text-align: center;
+}
+[class^="glyph-"], [class*=" glyph-"] {
+  display: inline-block;
+  width: 32px;
+  height: 28px;
+  line-height: 28px;
+  vertical-align: text-top;
+  background-image: url("feature-icons.png");
+  background-position: 28px 28px;
+  background-repeat: no-repeat;
+  margin-right: 0.3em;
+}
+[class^="glyph-"]:last-child, [class*=" glyph-"]:last-child {
+  margin-left: 0;
+}
+.glyph-performance {
+  background-position: 7px 0;
+}
+.glyph-clustering {
+  background-position: -25px 0;
+}
+.glyph-scatter-gather {
+  background-position: -58px 0;
+}
+.glyph-concurrency {
+  background-position: -91px 0;
+}
+.glyph-rails-and-django {
+  background-position: -123px 0;
+}
+.glyph-language-support {
+  background-position: -157px 0;
+}
+.glyph-fault-tolerance {
+  background-position: -187px 0;
+}
+.glyph-extensibility {
+  background-position: -214px 0;
+}
+.glyph-open-source {
+  background-position: -247px 0;
+}
