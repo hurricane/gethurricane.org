@@ -42,7 +42,7 @@
           <p>A scalable, extensible, distributed messaging system.</p>
           <p class="marketing-buttons">
             <a class="btn btn-primary btn-large" href="https://www.github.com/hurricane/hurricane">View Project on GitHub &raquo;</a>
-            <a class="btn btn-large" href="https://nodeload.github.com/hurricane/hurricane/zipball/v0.2.2">Download Hurricane &raquo;</a>
+            <a class="btn btn-large" href="https://nodeload.github.com/hurricane/hurricane/zipball/v0.2.3">Download Hurricane &raquo;</a>
           </p>
         </div><!--/span-->
       </div><!--/row-->
@@ -130,6 +130,7 @@
 <span style='color:#797997; '>$</span> unzip hurricane<span style='color:#800000; font-weight:bold; '>.</span>zip
 <span style='color:#797997; '>$</span> mv hurricane-hurricane<span style='color:#808030; '>*</span> hurricane
 <span style='color:#797997; '>$</span> <span style='color:#bb7977; font-weight:bold; '>cd</span> hurricane
+<span style='color:#797997; '>$</span> make
 <span style='color:#797997; '>$</span> curl <span style='color:#0000e6; '>'https://nodeload.github.com/mochi/mochiweb/zipball/master'</span> <span style='color:#e34adc; '>></span> mochiweb<span style='color:#800000; font-weight:bold; '>.</span>zip
 <span style='color:#797997; '>$</span> unzip mochiweb<span style='color:#800000; font-weight:bold; '>.</span>zip
 <span style='color:#797997; '>$</span> mv mochi-mochiweb<span style='color:#808030; '>*</span> mochiweb
@@ -138,7 +139,7 @@
 <span style='color:#797997; '>$</span> <span style='color:#bb7977; font-weight:bold; '>cd</span> <span style='color:#800000; font-weight:bold; '>.</span><span style='color:#800000; font-weight:bold; '>.</span>
 <span style='color:#797997; '>$</span> <span style='color:#800000; font-weight:bold; '>.</span><span style='color:#40015a; '>/run.escript</span> <span style='color:#40015a; '>examples/basic.config</span>
 
-<span style='color:#696969; '># Now you're ready to run the demos in the examples for one of the <a href="https://github.com/hurricane">language drivers</a></span>
+<span style='color:#696969; '># Now you're ready to run the demos in the examples for one of the language drivers</span>
 </pre>
           <br/><br/>
         </div><!--/span-->
@@ -235,6 +236,7 @@ application <span style='color:#808030; '>=</span> WSGIHandler<span style='color
 <span style='color:#000000; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#797997; '>$gateway</span><span style='color:#808030; '>-</span><span style='color:#808030; '>></span><span style='color:#000000; '>send</span><span style='color:#808030; '>(</span><span style='color:#797997; '>$request</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><span style='color:#000000; '></span>
 <span style='color:#000000; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#797997; '>$response</span><span style='color:#000000; '> </span><span style='color:#808030; '>=</span><span style='color:#000000; '> </span><span style='color:#797997; '>$gateway</span><span style='color:#808030; '>-</span><span style='color:#808030; '>></span><span style='color:#000000; '>recv</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><span style='color:#000000; '></span>
 <span style='color:#000000; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#800000; font-weight:bold; '>echo</span><span style='color:#000000; '> </span><span style='color:#797997; '>$response</span><span style='color:#808030; '>-</span><span style='color:#808030; '>></span><span style='color:#000000; '>getData</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#000000; '> </span><span style='color:#808030; '>.</span><span style='color:#000000; '> PHP_EOL</span><span style='color:#800080; '>;</span><span style='color:#000000; '></span>
+<span style='color:#000000; '> </span><span style='color:#800080; '>}</span><span style='color:#000000; '></span>
 </pre>
           <br/><br/>
         </div><!--/span-->
@@ -287,18 +289,18 @@ application <span style='color:#808030; '>=</span> WSGIHandler<span style='color
         <div class="span9">
           <pre>
 {
-    compile_modules,
+    load_modules,
     [
-        "erl_modules/hurricane.erl",
-        "erl_modules/hurricane_config_server.erl",
-        "erl_modules/hurricane_utils.erl",
-        "erl_modules/hurricane_stdio_server.erl",
-        "erl_modules/hurricane_tcp_server.erl",
-        "erl_modules/hurricane_http_server.erl",
-        "erl_modules/hurricane_log_server.erl",
-        "erl_modules/hurricane_supervisor.erl",
-        "erl_modules/hurricane_message_delegate.erl",
-        "erl_modules/hurricane_distribution_manager.erl"
+        "ebin/hurricane",
+        "ebin/hurricane_config_server",
+        "ebin/hurricane_utils",
+        "ebin/hurricane_stdio_server",
+        "ebin/hurricane_tcp_server",
+        "ebin/hurricane_http_server",
+        "ebin/hurricane_log_server",
+        "ebin/hurricane_supervisor",
+        "ebin/hurricane_message_delegate",
+        "ebin/hurricane_distribution_manager"
     ]
 }.
 
