@@ -1,1 +1,1 @@
-This is the files for the gethurricane.org website.
+This is the files for the Hurricane GitHub page.
